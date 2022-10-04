@@ -20,7 +20,7 @@ defmodule ExpandModules do
   end
 
   defp read_file(file), do: File.read!(file)
-  defp process_alias(content), do: process_alias(content, Regex.run(@alias_regex, content))
+  defp process_alias(content), do: process_alias(content, Regex.run(@regex, content))
   defp process_alias(content, nil), do: content
   defp process_alias(content, aliases_content), do: do_process_alias(content, aliases_content)
   defp write_new_content(content, file), do: File.write!(file, content)
