@@ -3,7 +3,7 @@ defmodule ExpandModules do
 
   @cmd "find"
   @cmd_args [".", "-name", "*.ex", "-not", "-path", "./deps/*"]
-  @alias_regex ~r/  (import|require|alias) [\w.]+.{[\n \w,.]+}\n/
+  @regex ~r/  (import|require|alias) [\w.]+.{[\n \w,.]+}\n/
 
   def expand() do
     {output, 0} = System.cmd(@cmd, @cmd_args)
