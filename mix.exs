@@ -14,21 +14,25 @@ defmodule ExpandEx.MixProject do
     ]
   end
 
-  def application do
+  def application() do
     [
       extra_applications: [:logger]
     ]
   end
 
-  defp deps, do: []
+  defp deps() do
+    [
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+    ]
+  end
 
   defp package() do
     [
       name: :expand_ex,
       description: "Expands import|require|alias into multiple lines",
-      files: ["lib", "mix.exs", "README*", "LICENSE*", "CHANGELOG.md"],
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Bagu Alexandru Bogdan"],
-      licenses: ["Apache 2.0"],
+      licenses: ["MIT"],
       links: %{
         "GitHub" => @source_url
       }
